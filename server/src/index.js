@@ -9,7 +9,7 @@ import logger from './util/logger';
 
 const port = 8080;
 
-app.listen(port, function() {
+app.listen(port, () => {
   // const host = this.address().address;
   // const {port} = this.address().port;
 

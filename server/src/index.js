@@ -1,7 +1,7 @@
 /* -------------------------------- PACKAGES -------------------------------- */
 
 import app from './app';
-import logger from './util/logger';
+import {logger} from './util';
 import {thinky} from '../db';
 
 /* -------------------------------------------------------------------------- */

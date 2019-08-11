@@ -2,6 +2,7 @@
 
 import app from './app';
 import logger from './util/logger';
+import {thinky} from '../db';
 
 /* -------------------------------------------------------------------------- */
 
@@ -9,12 +10,15 @@ import logger from './util/logger';
 
 const port = 8080;
 
-app.listen(port, () => {
-  // const host = this.address().address;
-  // const {port} = this.address().port;
-
-  logger.info(`started listening at http://localhost:${port}`);
-});
+thinky.dbReady().then(() => {
+  logger.info('Database ready, starting server...');
+  app.listen(port, () => {
+    // const host = this.address().address;
+    // const {port} = this.address().port;
+    
+    logger.info(`started listening at http://localhost:${port}`);
+  });  
+})
 
 /* -------------------------------------------------------------------------- */
 
